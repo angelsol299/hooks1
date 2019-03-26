@@ -18,6 +18,7 @@ function TodoForm({ addTodo }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        placeholder="add task todo"
         type="text"
         className="input"
         value={value}
@@ -44,7 +45,8 @@ function App() {
   ]);
 
   const addTodo = text => {
-    const NewTodos = [...todos];
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
   };
 
   return (
