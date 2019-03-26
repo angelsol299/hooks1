@@ -2,7 +2,17 @@ import React, { useState } from "react";
 import "./App.css";
 
 function Todo({ todo, index }) {
-  return <div className="todo">{todo.text}</div>;
+  return (
+    <div
+      style={{ textDecoration: todo.isCompleted ? "line-though" : "" }}
+      className="todo"
+    >
+      {todo.text}
+      <div>
+        <button onClick={() => completeTodo(index)}>Complete</button>
+      </div>
+    </div>
+  );
 }
 
 function TodoForm({ addTodo }) {
